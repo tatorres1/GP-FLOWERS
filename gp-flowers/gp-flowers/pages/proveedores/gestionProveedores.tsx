@@ -1,19 +1,47 @@
 import { useState } from 'react';
-
+import proveedores from "../../gestion_proveedor.json";
 
 interface Data {
-  cedula: number;
+  cedula: string;
   nombre: string;
-  telefono: number;
+  telefono: string;
   direccion: string;
 }
 
+
+
 const Proveedores: React.FC = () => {
-  const [data, setData] = useState<Data[]>([
-    { cedula: 504002589, nombre: 'proveedor1', telefono: 999999999, direccion: 'direccion1' },
-    { cedula: 504111589, nombre: 'proveedor2', telefono: 988888888, direccion: 'direccion2' },
-    { cedula: 504000089, nombre: 'proveedor3', telefono: 977777777, direccion: 'direccion3' }
-  ]);
+
+  //data de inicio para lectura de json
+  var longit = proveedores.length;
+  var contador = 0;
+
+
+  //lee los datos y hace push en un array
+  const datos = 
+  [    
+    //{ cedula: proveedores[contador].cedula, nombre: proveedores[contador].nombre, telefono: proveedores[contador].telefono, direccion: proveedores[contador].direccion }
+  ]
+
+  while(contador < longit){
+    datos.push({ cedula: proveedores[contador].cedula, 
+                  nombre: proveedores[contador].nombre,
+                  telefono: proveedores[contador].telefono,
+                  direccion: proveedores[contador].direccion });
+                
+    contador = contador + 1;
+  }
+  
+  const [data, setData] = useState<Data[]>(datos);
+
+
+  //eliminar item de json
+
+  function EliminarItem(){
+    proveedores.splice(0);
+    alert("item borrado");
+  }
+  
 
   return (
     <div className='w-full h-screen  bg-gradient-to-r from-lime-500 to-cyan-500'>
@@ -49,7 +77,7 @@ const Proveedores: React.FC = () => {
                 <td className="border border-lime-900 px-6 py-4 text-center">
                   <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">EDITAR</a></td>
                 <td className="border border-lime-900 px-6 py-4 text-center">
-                  <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">ELIMINAR</a> </td>
+                  <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={EliminarItem}>ELIMINAR</a> </td>
               </tr>
             ))}
           </tbody>

@@ -1,0 +1,19 @@
+[
+    {
+        "cedula": "05015649894",
+        "nombre": "leido1",
+        "direccion": "Latacunga sector buenaventura",
+        "telefono": "0995686479"
+    },
+    {
+        "cedula": "05178996574",
+        "nombre": "leido2",
+        "direccion": "Latacunga sector Niagara",
+        "telefono": "0995686479"
+    },{
+        "cedula": "05136574988",
+        "nombre": "leido3",
+        "direccion": "Latacunga",
+        "telefono": "0989768649"
+    }
+]

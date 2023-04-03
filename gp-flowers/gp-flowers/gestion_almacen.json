@@ -1,0 +1,17 @@
+[
+    {
+        "cantidad": "20",
+        "materiales": "Caja Top",
+        "tipo": "Consumible"
+    },
+    {
+        "cantidad": "150",
+        "materiales": "Cartón bonche",
+        "tipo": "Consumible"
+    },
+    {
+        "cantidad": "2",
+        "materiales": "Compresor 10 L",
+        "tipo": "Herramienta"
+    }
+]
